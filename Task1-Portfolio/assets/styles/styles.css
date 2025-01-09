@@ -1,0 +1,398 @@
+/* Navbar Styling */
+.custom-navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #333;
+}
+
+.nav-link.active {
+    color: #333;
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding: 1rem 0;
+    }
+    
+    .nav-item {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+}
+
+/* General Body Styling */
+body {
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+    padding-top: 0;
+}
+
+/* Rest of your existing CSS remains the same */
+.curved-box {
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.curved-box .portpone-text {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 18px;
+    color: #6c757d;
+}
+
+/* Responsive text adjustments */
+@media (max-width: 768px) {
+    .curved-box .portpone-text {
+        position: static;
+        transform: none;
+        display: block;
+        margin-bottom: 1rem;
+    }
+    
+    .curved-box h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Section Styling */
+.section {
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+.icon-circle {
+    border: 2px solid #6c757d;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: #6c757d;
+    font-size: 40px;
+    position: relative;
+}
+
+.small-box {
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #6c757d;
+    padding: 5px 10px;
+    border: 2px solid #6c757d;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container adjustments for larger screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+        padding: 0 30px;
+    }
+}
+
+/* Small box responsive adjustment */
+@media (max-width: 768px) {
+    .small-box {
+        left: 50%;
+        top: -25px;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+}
+
+/* Row Styling with improved spacing */
+.row > [class*='col-'] {
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .row > [class*='col-'] {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Card Styling */
+.card {
+    flex: 1;
+    margin-bottom: 1rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Dotted Line Styling */
+.dotted-line {
+    border-bottom: 2px dotted #6c757d;
+    padding-bottom: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Typography responsive adjustments */
+@media (max-width: 768px) {
+    h4 {
+        font-size: 1.25rem;
+    }
+    
+    h5 {
+        font-size: 1.1rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Section content spacing for mobile */
+@media (max-width: 768px) {
+    .section {
+        padding: 15px;
+    }
+    
+    .text-start {
+        padding: 0 10px;
+    }
+}
+/* Previous styles remain the same */
+/* ... previous styles ... */
+
+/* New styles for expandable sections */
+.expandable-section {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.show-more-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    color: #6c757d;
+    text-decoration: none;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.show-more-btn:hover {
+    background-color: #e9ecef;
+    color: #333;
+}
+
+.show-more-btn i {
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.show-more-btn[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+.collapse {
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+}
+
+.collapse ul {
+    margin: 0;
+    padding: 1rem 1rem 0.5rem 2rem;
+}
+
+.collapse li {
+    margin-bottom: 0.5rem;
+}
+
+/* Hide full content on mobile */
+@media (max-width: 767px) {
+    .full-content {
+        display: none;
+    }
+    
+    .content-preview {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+    .expandable-section {
+        margin-bottom: 0.5rem;
+    }
+
+    .show-more-btn {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .collapse ul {
+        padding: 0.75rem 0.75rem 0.25rem 1.5rem;
+    }
+}
+
+
+
+/* Preserve spacing in desktop view */
+@media (min-width: 768px) {
+    .section ul {
+        margin-bottom: 1rem;
+    }
+
+    .section li {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Keep existing styles and add/modify these */
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    .mobile-sections {
+        margin-top: 1.5rem;
+    }
+
+    .info-section {
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .info-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .info-section h5 {
+        color: #333;
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+    }
+
+    .show-more-btn {
+        width: 100%;
+        text-align: left;
+        padding: 0.5rem;
+        color: #6c757d;
+        text-decoration: none;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        border: 1px solid #dee2e6;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .show-more-btn:hover {
+        background-color: #e9ecef;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .show-more-btn i {
+        float: right;
+        transition: transform 0.3s ease;
+    }
+
+    .show-more-btn[aria-expanded="true"] i {
+        transform: rotate(180deg);
+    }
+
+    .collapse ul {
+        margin: 0;
+        padding: 0.75rem 1rem;
+        list-style-type: none;
+    }
+
+    .collapse ul li {
+        margin-bottom: 0.75rem;
+        color: #666;
+    }
+
+    .collapse ul li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Maintain desktop styles */
+@media (min-width: 768px) {
+    .section .row {
+        margin-top: 1.5rem;
+    }
+
+    .section h5 {
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .section ul {
+        padding-left: 1.25rem;
+        margin-bottom: 0;
+    }
+
+    .section ul li {
+        margin-bottom: 0.5rem;
+        color: #666;
+    }
+}
+
+/* Animation for collapse */
+.collapse {
+    transition: all 0.3s ease-out;
+}
+
+.collapsing {
+    transition: all 0.3s ease-out;
+}
