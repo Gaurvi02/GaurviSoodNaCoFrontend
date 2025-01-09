@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+
+        
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #6c757d;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #333;
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1320px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Header section */
+        .header {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .portpone-text {
+            font-weight: bold;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+
+        /* Sections layout */
+        .sections-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .section {
+            flex: 1 1 calc(33.333% - 2rem);
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex: 1 1 100%;
+            }
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #6c757d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .content-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .content-column {
+            flex: 1 1 calc(50% - 1rem);
+        }
+
+        @media (max-width: 768px) {
+            .content-column {
+                flex: 1 1 100%;
+            }
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="navbar-brand">Portpone</a>
+            <button class="menu-button">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="header" id="home">
+            <!-- <span class="portpone-text">Portpone</span> -->
+            <h1>PERSONAL PORTFOLIO</h1>
+        </header>
+
+        <div class="sections-container" id="portfolio">
+            <!-- Section 1 -->
+            <div class="section">
+                <h4>Personal Portfolio</h4>
+                <p>Additional info here</p>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="section">
+                <div class="icon-circle">👤</div>
+                <h4>Name</h4>
+                <div class="content-grid">
+                    <div class="content-column">
+                        <h5>Title</h5>
+                        <ul>
+                            <li>Title 1</li>
+                            <li>Title 2</li>
+                        </ul>
+                    </div>
+                    <div class="content-column">
+                        <h5>Achievements</h5>
+                        <ul>
+                            <li>Achievement 1</li>
+                            <li>Achievement 2</li>
+                        </ul>
+                    </div>
+                    <div class="content-column">
+                        <h5>Projects</h5>
+                        <ul>
+                            <li>Project 1</li>
+                            <li>Project 2</li>
+                        </ul>
+                    </div>
+                    <!-- Moment Section -->
+                    <div class="content-column">
+                        <h5>Moment</h5>
+                        <ul>
+                            <li>Moment 1</li>
+                            <li>Moment 2</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="section">
+                <h4>Personal Content</h4>
+                <div class="content-grid">
+                    <div class="card">
+                        <h5>Card 1</h5>
+                        <p>This is some text inside the first card.</p>
+                    </div>
+                    <div class="card">
+                        <h5>Card 2</h5>
+                        <p>This is some text inside the second card.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="section">
+                <h4>PEEAANIN BASIC</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id orci quis nulla luctus aliquam non at enim. Curabitur in ultricies libero, euismod tincidunt libero.</p>
+            
+            </div>
+
+            <!-- Section 5 -->
+            <div class="section">
+                <h4>Portfolio Section 5</h4>
+                <p >More info about this section</p>
+                  
+            </div>
+
+            <!-- Section 6 -->
+            <div class="section">
+                <h4>Projects</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sollicitudin, purus vel varius elementum, velit felis pretium libero, vel tincidunt nunc lorem sit amet est.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuButton = document.querySelector('.menu-button');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+
