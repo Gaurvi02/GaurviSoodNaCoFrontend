@@ -1,12 +1,9 @@
-# Personal Portfolio Website
+# Personal Mini Projects
 
 ## Description
-This repository contains the code for a **Personal Portfolio** website created using **HTML**, **CSS**, and **Bootstrap**. It includes various sections such as personal details, achievements, projects, and more. The website has a clean design with responsive layout, built using the latest Bootstrap framework.
+This repository contains the code for small mini-projects that I am building as part of my learning journey into full-stack web development, with a current focus on the front-end. The primary goal of these projects is to strengthen my skills in designing and developing visually appealing, interactive, and user-friendly websites using HTML, CSS, Bootstrap, and JavaScript.
+Each project folder in this repository represents a step in my learning process, showcasing different aspects of front-end development. 
+Some of the featured projects include personal portfoliio, To-do list, and more coming.
+The designs emphasize a modern, clean aesthetic with responsive layouts, ensuring compatibility across various devices and screen sizes. Through these projects, I aim to build a solid foundation in front-end development, gradually progressing towards creating complete full-stack applications in the future.
 
-## Features
-- **Responsive Layout**: The layout is fully responsive and adapts to different screen sizes.
-- **Bootstrap**: Utilizes the Bootstrap framework for quicker development and a mobile-first approach.
-- **Modern Design**: Includes a curved box at the top, circular icons for section titles, and a section with dotted lines to make the design more modern.
-- **Content Sections**: Different sections for personal details, achievements, projects, and other personal content.
-- **Cards for Projects**: Two sample cards showcasing your personal projects.
-- **Interactive Content**: Sections for additional content with optional design modifications (e.g., dotted lines).
+Feedback and suggestions are always welcome, as I am eager to learn and improve further!
