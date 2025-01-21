@@ -169,6 +169,10 @@ ul li.selected {
     }
 }
 @media screen and (max-width: 768px) {
+   .input-section {
+        flex-direction: column; /* Stack inputs vertically */
+        gap: 15px; /* Add spacing between elements */
+    }
     .lists {
         flex-direction: column; /* Stack lists vertically */
     }
