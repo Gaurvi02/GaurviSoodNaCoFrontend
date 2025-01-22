@@ -169,12 +169,13 @@ ul li.selected {
     }
 }
 @media screen and (max-width: 768px) {
-   .input-section {
+    .input-section {
         flex-direction: column; /* Stack inputs vertically */
         gap: 15px; /* Add spacing between elements */
     }
     .lists {
         flex-direction: column; /* Stack lists vertically */
+        /* align-items: center; */
     }
 
     .control-buttons {
@@ -193,5 +194,46 @@ ul li.selected {
 
     #move-to-todo {
         content: "MOVE TO UP";
+    }
+}
+
+/* Toaster styles */
+#toaster-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toaster {
+    background-color: #323232;
+    color: #fff;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slide-in 0.3s ease-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.toaster button {
+    background: none;
+    border: none;
+    color: #ff7043;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
