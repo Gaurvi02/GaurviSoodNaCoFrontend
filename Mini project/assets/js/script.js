@@ -10,6 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let undoStack = [];
 
+
+    // Function to update button text based on screen width
+    function updateButtonLabels() {
+        if (window.innerWidth <= 768) {
+            moveToComplete.textContent = "MOVE DOWN";
+            moveToTodo.textContent = "MOVE UP";
+        } else {
+            moveToComplete.textContent = "MOVE TO RIGHT →";
+            moveToTodo.textContent = "← MOVE TO LEFT";
+        }
+    }
+
+      // Listen for window resize events
+      window.addEventListener("resize", updateButtonLabels);
+
+      // Set the labels on page load
+      updateButtonLabels();
+
     // Display toaster notifications
     function showToaster(message, undoCallback = null) {
         const toaster = document.createElement("div");
