@@ -143,6 +143,24 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("todoTasks", JSON.stringify(todoTasks));
         localStorage.setItem("completeTasks", JSON.stringify(completeTasks));
     }
+    function addTaskToList(task, list) {
+    // Check both lists for duplicates
+    const isDuplicate = Array.from(todoList.children).some(item => item.textContent === task.text) ||
+                        Array.from(completeList.children).some(item => item.textContent === task.text);
+
+    if (isDuplicate) {
+        showToaster("Task already exists!");
+        return;
+    }
+
+    const li = document.createElement("li");
+    li.textContent = task.text;
+    if (task.selected) li.classList.add("selected");
+    li.addEventListener("click", () => li.classList.toggle("selected"));
+    list.appendChild(li);
+    saveTasks(); // Save changes to localStorage
+}
+
 
     // Initialize tasks
     loadTasks();
