@@ -1,0 +1,89 @@
+<!-- cmy.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMY Color Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cmy.css">
+</head>
+<body onload="setValues()">
+    <!-- Same navbar as index.html -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Color Models</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rgb.html">RGB</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cmy.html">CMY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="web-safe-color.html">Web Safe Colors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-box">
+                    <h2>CMY Color Model</h2>
+                    <p class="rgb-text">
+                        <span class="letter-c">C</span><span class="letter-m">M</span><span class="letter-y">Y</span>
+                    </p>
+                    <p>CMY is a subtractive color model where each color is stored in one byte.</p>
+                    <p>All possible combinations of cyan, magenta and yellow give 2^14=16,777,216 different colors.</p>
+                    <p>Starting with (Cyan, Magenta, Yellow)=(0,0,0) (white), to which different color</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="color-picker">
+                    <h3>Color Picker</h3>
+                    <div class="form-group">
+                        <label for="cyanValue">Cyan:</label>
+                        <select id="cyanValue" onchange="displayCMYColor()" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="magentaValue">Magenta:</label>
+                        <select id="magentaValue" onchange="displayCMYColor()" class="form-control"></select>
+                    </div>
+                    <div class="form-group">
+                        <label for="yellowValue">Yellow:</label>
+                        <select id="yellowValue" onchange="displayCMYColor()" class="form-control"></select>
+                    </div>
+                    
+                    <div class="values-display">
+                        <p>CMY Values: <span id="cmyValue"></span></p>
+                        <p>RGB Values: <span id="rgbFromCMY"></span></p>
+                        <p>Hex Value: <span id="hexFromCMY"></span></p>
+                    </div>
+                    
+                    <div id="cmyColorDisplay" class="color-display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
