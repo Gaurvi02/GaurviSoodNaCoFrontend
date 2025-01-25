@@ -163,6 +163,24 @@ body {
     margin-left: 10px;
 }
 
+select.form-control {
+    -webkit-appearance: menulist; /* Ensures dropdown styling is default across browsers */
+    -moz-appearance: menulist;
+    appearance: menulist;
+    background-color: white; /* Makes dropdown visually clear */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-radius: 4px; /* Smooth rounded corners */
+    padding: 5px;
+    cursor: pointer; /* Adds pointer cursor for dropdown */
+}
+
+select.form-control:focus {
+    outline: none; /* Removes outline on focus */
+    border-color: #007bff; /* Adds a focus highlight */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
 .rgb-text {
     font-size: 2.5em;
     font-weight: bold;
