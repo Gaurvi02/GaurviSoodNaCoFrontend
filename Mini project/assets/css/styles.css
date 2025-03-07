@@ -1,0 +1,239 @@
+/* styles.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #00796b, #ff8a65); /* Teal to orange gradient */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background: #ffffff;
+    color: #333;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #00796b; /* Teal */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #00796b; /* Teal */
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #00796b; /* Teal */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #005f56;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+button#remove-button {
+    background-color: #ff7043; /* Orange */
+}
+
+button#remove-button:hover {
+    background-color: #e64a19;
+}
+.lists {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: stretch; /* Ensures buttons are aligned with lists */
+}
+
+.list-container {
+    background: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* For vertical stacking */
+    justify-content: flex-start;
+    min-height: 300px; /* Set a minimum height for alignment */
+}
+
+
+.list-container h2 {
+    font-size: 1.5rem;
+    color: #ff7043; /* Orange */
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px; /* Same height for both lists */
+    overflow-y: auto; /* Scroll if content exceeds max height */
+   
+}
+
+ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 8px;
+}
+
+ul li {
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+ul li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li.selected {
+    background: #d7f2e7; /* Light teal */
+    border-color: #64b5f6; /* Highlight border */
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.control-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+@media (min-width: 768px) {
+    .lists {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 768px) {
+    .input-section {
+        flex-direction: column; /* Stack inputs vertically */
+        gap: 15px; /* Add spacing between elements */
+    }
+    .lists {
+        flex-direction: column; /* Stack lists vertically */
+        /* align-items: center; */
+    }
+
+    .control-buttons {
+        flex-direction: row;
+        gap: 5px;
+        margin: 10px 0;
+    }
+
+    .responsive-button {
+        font-size: 0.9rem;
+    }
+
+    #move-to-complete {
+        content: "MOVE TO DOWN";
+    }
+
+    #move-to-todo {
+        content: "MOVE TO UP";
+    }
+}
+
+/* Toaster styles */
+#toaster-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toaster {
+    background-color: #323232;
+    color: #fff;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slide-in 0.3s ease-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.toaster button {
+    background: none;
+    border: none;
+    color: #ff7043;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
