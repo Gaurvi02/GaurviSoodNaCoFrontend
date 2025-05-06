@@ -266,13 +266,51 @@ footer {
     margin-top: 2rem;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
+    .category-card {
+        margin-bottom: 15px;
+    }
+    
+    .category-card img {
+        height: 180px;
+    }
+    
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .btn-group .btn {
+        margin: 2px;
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .product-card .card-body {
+        padding: 1rem;
+    }
+    
+    .product-card img {
+        height: 150px;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .category-card img {
+        height: 200px;
+    }
+    
+    .product-card img {
+        height: 180px;
     }
 }
