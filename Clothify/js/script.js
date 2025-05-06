@@ -1,5 +1,3 @@
-// Enhanced JavaScript for Clothify Store
-
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -21,12 +19,13 @@ async function fetchData(url) {
 }
 
 // Function to populate categories section
-async function loadCategories() {
+// In your loadCategories() function, update the category card generation:
+function loadCategories() {
     const categories = [
-        { name: 'Men', image: 'https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' },
-        { name: 'Women', image: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' },
-        { name: 'Accessories', image: 'https://images.unsplash.com/photo-1591348122449-02525d70379b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' },
-        { name: 'New Arrivals', image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' }
+        { name: 'Men', image: 'https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', filter: 'men' },
+        { name: 'Women', image: 'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', filter: 'women' },
+        { name: 'Jewellery', image: 'https://images.unsplash.com/photo-1591348122449-02525d70379b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', filter: 'jewelery' },
+        { name: 'New Arrivals', image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60', filter: 'all' }
     ];
     
     const categoryList = document.getElementById('category-list');
@@ -39,7 +38,7 @@ async function loadCategories() {
                 <img src="${category.image}" class="card-img-top" alt="${category.name}">
                 <div class="card-body">
                     <h5 class="card-title">${category.name}</h5>
-                    <a href="#" class="btn btn-outline-primary btn-sm">Shop Now</a>
+                    <a href="#products" class="btn btn-outline-primary btn-sm" data-category="${category.filter}">Shop Now</a>
                 </div>
             </div>
         `;
@@ -164,22 +163,25 @@ function displayCart() {
     let total = 0;
     
     cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
+        // Add validation for price and quantity
+        const price = item.price || 0;
+        const quantity = item.quantity || 0;
+        const itemTotal = price * quantity;
         total += itemTotal;
         
         itemsHTML += `
             <div class="row mb-3 align-items-center">
                 <div class="col-2">
-                    <img src="${item.image}" alt="${item.title}" class="img-fluid" style="max-height: 60px;">
+                    <img src="${item.image || ''}" alt="${item.title || 'Item'}" class="img-fluid" style="max-height: 60px;">
                 </div>
                 <div class="col-5">
-                    <h6 class="mb-1">${item.title}</h6>
-                    <small class="text-muted">$${item.price.toFixed(2)} each</small>
+                    <h6 class="mb-1">${item.title || 'Untitled Item'}</h6>
+                    <small class="text-muted">$${price.toFixed(2)} each</small>
                 </div>
                 <div class="col-3">
                     <div class="input-group input-group-sm">
                         <button class="btn btn-outline-secondary" onclick="updateQuantity(${index}, -1)">-</button>
-                        <input type="text" class="form-control text-center" value="${item.quantity}" readonly>
+                        <input type="text" class="form-control text-center" value="${quantity}" readonly>
                         <button class="btn btn-outline-secondary" onclick="updateQuantity(${index}, 1)">+</button>
                     </div>
                 </div>
@@ -275,4 +277,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+// Replace your existing event listener with this improved version
+document.addEventListener('click', function(e) {
+    // Hero section "Shop Now" button
+    if (e.target.classList.contains('btn-hero')) {
+        e.preventDefault();
+        
+        // Find the "All" filter button safely
+        const allFilterButton = document.querySelector('[data-filter="all"]');
+        if (allFilterButton) {
+            allFilterButton.click();
+        }
+        
+        // Scroll to products section
+        const productsSection = document.querySelector('#products');
+        if (productsSection) {
+            productsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    
+    // Category "Shop Now" buttons
+    const shopNowBtn = e.target.closest('.btn-outline-primary');
+    if (shopNowBtn && shopNowBtn.textContent.trim() === 'Shop Now') {
+        e.preventDefault();
+        const category = shopNowBtn.getAttribute('data-category');
+        const filterButton = document.querySelector(`[data-filter="${category}"]`);
+        
+        if (filterButton) {
+            filterButton.click();
+        }
+        
+        // Scroll to products section
+        const productsSection = document.querySelector('#products');
+        if (productsSection) {
+            productsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 });
